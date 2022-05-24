@@ -3,3 +3,8 @@
 @section('titulo')
     Titulo de la plataforma
 @endsection
+
+
+@section('contenido')
+    Este es el contenido de la página
+@endsection

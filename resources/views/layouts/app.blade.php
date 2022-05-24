@@ -14,6 +14,9 @@
 
         <h1>@yield('titulo')</h1> {{--@yield() lo usamos como un contenedor,
                                     por lo cual le pamos la infoamción desde otra vista con @section--}}
+
+        <hr>
+        @yield('contenido')
     </nav>
 </body>
 </html>
