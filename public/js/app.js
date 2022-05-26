@@ -2164,8 +2164,6 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-alert('hola mundo');
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
