@@ -8,7 +8,7 @@
 
     <title>Laravel</title>
 </head>
-<body>
+<body class="bg-gray-100">
     <nav>
         <a href="/">Principal</a>
         <a href="/nosotros">Nosotros</a>
