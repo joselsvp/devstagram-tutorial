@@ -18,6 +18,10 @@ class RegisterController extends Controller
         //dd($request);
         //dd($request->get('username'));
 
+        //Modificar el request
+
+        $request->request->add(['username' => Str::slug($request->username)]);
+
         //validaciones
         $this->validate($request, [
            'name' => 'required|min:5',
@@ -28,7 +32,7 @@ class RegisterController extends Controller
 
         User::create([
            'name' => $request->name,
-           'username' => Str::slug($request->username),
+           'username' => $request->username,
            'email' => $request->email,
            'password' => Hash::make($request->password)
         ]);
