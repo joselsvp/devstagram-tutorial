@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        dd(auth()->user());
+        return view('dashboard');
     }
 
 }
