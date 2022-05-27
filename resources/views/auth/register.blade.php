@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="email" class="mb-1 block uppercase text-gray-500 font-bold">Username</label>
+                    <label for="email" class="mb-1 block uppercase text-gray-500 font-bold">Correo</label>
                     <input type="email" id="email" name="email" placeholder="Ingrese correo electrónico" class="border p-3 w-full rounded-lg">
                 </div>
 
