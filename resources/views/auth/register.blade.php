@@ -13,7 +13,9 @@
                 @csrf
                 <div class="mb-5">
                     <label for="name" class="mb-1 block uppercase text-gray-500 font-bold">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Ingrese su(s) nombre(s)" class="border p-3 w-full rounded-lg">
+                    <input type="text" id="name" name="name" placeholder="Ingrese su(s) nombre(s)" class="border p-3 w-full rounded-lg
+                    @error('name') border-gray-600 @enderror"
+                    value="{{old('name')}}"/>
                     @error('name')
                         <p class="bg-gray-600 text-white my-2 rounded-lg text-sm p-3 mt-2 text-center">{{$message}}</p>
                     @enderror
