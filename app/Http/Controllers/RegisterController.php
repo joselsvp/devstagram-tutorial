@@ -13,8 +13,11 @@ class RegisterController extends Controller
 
     public function store(Request $request) {
         //dd($request);
-        dd($request->get('username'));
+        //dd($request->get('username'));
 
         //validaciones
+        $this->validate($request, [
+           'name' => 'required|min:5',
+        ]);
     }
 }
