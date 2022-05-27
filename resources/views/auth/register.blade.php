@@ -23,7 +23,8 @@
 
                 <div class="mb-5">
                     <label for="username" class="mb-1 block uppercase text-gray-500 font-bold">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Ingrese nombre de usuario" class="border p-3 w-full rounded-lg">
+                    <input type="text" id="username" name="username" placeholder="Ingrese nombre de usuario" class="border p-3 w-full rounded-lg
+                    @error('username') border-gray-600 @enderror" value="{{old('username')}}">
                     @error('username')
                     <p class="bg-gray-600 text-white my-2 rounded-lg text-sm p-3 mt-2 text-center">{{$message}}</p>
                     @enderror
@@ -31,7 +32,8 @@
 
                 <div class="mb-5">
                     <label for="email" class="mb-1 block uppercase text-gray-500 font-bold">Correo</label>
-                    <input type="email" id="email" name="email" placeholder="Ingrese correo electrónico" class="border p-3 w-full rounded-lg">
+                    <input type="email" id="email" name="email" placeholder="Ingrese correo electrónico" class="border p-3 w-full rounded-lg
+                    @error('email') border-gray-600 @enderror" value="{{old('email')}}">
                     @error('email')
                     <p class="bg-gray-600 text-white my-2 rounded-lg text-sm p-3 mt-2 text-center">{{$message}}</p>
                     @enderror
@@ -39,7 +41,7 @@
 
                 <div class="mb-5">
                     <label for="password" class="mb-1 block uppercase text-gray-500 font-bold">Contraseña</label>
-                    <input type="password" id="password" name="password" placeholder="Ingrese contraseña" class="border p-3 w-full rounded-lg">
+                    <input type="password" id="password" name="password" placeholder="Ingrese contraseña" class="border p-3 w-full rounded-lg @error('password') border-gray-600 @enderror">
                     @error('password')
                     <p class="bg-gray-600 text-white my-2 rounded-lg text-sm p-3 mt-2 text-center">{{$message}}</p>
                     @enderror
