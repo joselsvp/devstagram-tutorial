@@ -9,8 +9,13 @@
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form novalidate>
+            <form method="POST" action="{{route('login')}}" novalidate>
                 @csrf
+
+                @if(session('mensaje'))
+                    <p class="bg-gray-600 text-white my-2 rounded-lg text-sm p-3 mt-2 text-center">{{session('mensaje')}}</p>
+                @endif
+
                 <div class="mb-5">
                     <label for="email" class="mb-1 block uppercase text-gray-500 font-bold">Correo</label>
                     <input type="email" id="email" name="email" placeholder="Ingrese correo electrónico" class="border p-3 w-full rounded-lg
