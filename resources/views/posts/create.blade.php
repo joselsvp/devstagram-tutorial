@@ -5,7 +5,9 @@
 @section('contenido')
     <div class="md:flex md:items-center">
         <div class="md:w-1/2 px-10">
-            imagen
+            <form action="/IMAGENES" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+
+            </form>
         </div>
         <div class="md:w-1/2 px-10">
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
