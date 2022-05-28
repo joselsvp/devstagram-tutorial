@@ -15,15 +15,23 @@
                 DevStagram
             </h1>
 
-            @if(auth()->user())
-                <p>Autenticado</p>
-            @else
-                <p>No autenticado</p>
-            @endif
-            <nav class="flex gap-2 items-center">
-                <a class="font-bold uppercase text-gray-600 mr-2" href="{{route('login')}}">Login</a>
-                <a class="font-bold uppercase text-gray-600" href="{{route('register')}}">Crear Cuenta</a>
-            </nav>
+            @auth()
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold text-gray-600 mr-2" href="#">
+                        <span>Hola: {{auth()->user()->username}}</span>
+                    </a>
+
+                    <a class="font-bold uppercase text-gray-600 mr-2" href="{{route('login')}}">Cerrar sesión</a>
+                </nav>
+            @endauth
+
+            @guest()
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold uppercase text-gray-600 mr-2" href="{{route('login')}}">Login</a>
+                    <a class="font-bold uppercase text-gray-600" href="{{route('register')}}">Crear Cuenta</a>
+                </nav>
+            @endguest
+
         </div>
     </header>
     <main class="container mx-auto mt-10">
