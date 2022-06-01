@@ -23,6 +23,10 @@ var dropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0__["default"]('#dropzone',
 dropzone.on('sending', function (file, xhr, formData) {
   console.log(file);
 });
+dropzone.on('success', function (file, xhr, formData) {
+  console.log(file);
+  console.log(formData);
+});
 
 /***/ }),
 
