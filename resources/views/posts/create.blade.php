@@ -21,7 +21,7 @@
                         Título
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                           id="title" name="title" type="text" placeholder="Ingresa título" value="{{old('description')}}"
+                           id="title" name="title" type="text" placeholder="Ingresa título" value="{{old('title')}}"
                     >
                     @error('title')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="mb-5">
-                    <input type="hidden" name="imagen">
+                    <input type="hidden" name="imagen" value="{{old('imagen')}}">
                     @error('imagen')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror
