@@ -14,18 +14,29 @@
             </form>
         </div>
         <div class="md:w-1/2 px-10">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form action="{{route('posts.store')}}" method="POST" novalidate class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                         Título
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" name="title" type="text" placeholder="Ingresa título">
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                           id="title" name="title" type="text" placeholder="Ingresa título" value="{{old('description')}}"
+                    >
+                    @error('title')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                         Descripción
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" type="text" placeholder="Ingresa una descripción">
+                    <textarea id="description" name="description" placeholder="Ingresa una descripción" class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror">
+                        {{old('description')}}
+                    </textarea>
+                    @error('description')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
                 </div>
 
                 <input type="submit" value="Crear publicación" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">

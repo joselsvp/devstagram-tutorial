@@ -33,6 +33,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 //al pasar como nombre de ruta, el nombre de un modelo se establece que se está implementando route model binding
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::post('/images',[ImagenController::class, 'store'])->name('images.store');
 
