@@ -15,7 +15,9 @@ class PostController extends Controller
 
     public function index(User $user)
     {
-        return view('dashboard', compact('user'));
+        $posts = Post::where('user_id', $user->id)->paginate(1);
+
+        return view('dashboard', compact('user', 'posts'));
     }
 
     public function create()
