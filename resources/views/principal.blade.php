@@ -6,5 +6,5 @@
 
 
 @section('contenido')
-    Este es el contenido de la páginad
+    Este es el contenido de la página
 @endsection
