@@ -13,27 +13,32 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(User $user){
-        return view('dashboard',compact('user'));
+    public function index(User $user)
+    {
+        return view('dashboard', compact('user'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('posts.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, [
-           'title' => 'required|max:255',
-           'description' => 'required',
-           'imagen' => 'required',
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'imagen' => 'required',
         ]);
 
-        Post::create([
-            'titulo' => $request->title,
-            'descripcion' => $request->description,
-            'imagen' => $request->imagen,
-            'user_id' => auth()->user()->id
-        ]);
+        /*        Post::create([
+                    'titulo' => $request->title,
+                    'descripcion' => $request->description,
+                    'imagen' => $request->imagen,
+                    'user_id' => auth()->user()->id
+                ]);
+
+        */
 
         /*
         $post = new Post();
@@ -42,6 +47,13 @@ class PostController extends Controller
         $post->imagen = $request->imagen;
         $post->save();
          * */
+
+        $request->user()->posts()->create([
+            'titulo' => $request->title,
+            'descripcion' => $request->description,
+            'imagen' => $request->imagen,
+            'user_id' => auth()->user()->id
+        ]);
         return redirect()->route('posts.index', auth()->user()->username);
     }
 
