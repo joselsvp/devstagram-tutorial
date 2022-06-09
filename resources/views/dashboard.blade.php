@@ -33,7 +33,7 @@
             @if($posts->count())
                 @foreach($posts as $post)
                     <div>
-                        <a href="">
+                        <a href="{{route('posts.show', $post)}}">
                             <img src="{{asset('uploads') .'/'. $post->imagen}}" alt="Imagen del post {{$post->titulo}}">
                         </a>
                     </div>
